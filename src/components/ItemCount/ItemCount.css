@@ -1,0 +1,40 @@
+.item-count{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem ;
+}
+
+.item-count button, .agregar-carrito{
+    background-color: red;
+    border: 0;
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    border: 2px solid black;
+    transition: .2s;
+}
+.item-count button:hover, .agregar-carrito:hover{
+    background-color: rgb(240, 239, 239);
+    color: red;
+
+}
+.agregar-carrito{
+    width: auto;
+    height: auto;
+    margin-top: .5rem;
+    padding: .4rem;
+}
+p.cantidad{
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight:bold;
+}

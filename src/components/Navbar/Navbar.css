@@ -1,0 +1,30 @@
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    height: 5rem;
+    width: 100%;
+    background: black;
+}
+.menu{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    color: rgb(77, 153, 224);
+    margin: 0;
+
+}
+.menu-enlace {
+    text-decoration: none;
+    color: rgb(71, 131, 209);
+    font-size: 1.2rem;
+}
+p{
+    color: rgb(77, 153, 224);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15;
+    margin: 20px;
+}
