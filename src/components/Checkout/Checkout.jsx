@@ -3,6 +3,8 @@ import { Context } from '../../context/Context';
 import { useForm } from 'react-hook-form';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
+import Loader from '../Loader/Loader';
+import './Checkout.css'
 
 const Checkout = () => {
 
@@ -12,6 +14,8 @@ const Checkout = () => {
     
         const{ register, handleSubmit} = useForm();
         
+        const [loading, setLoading] = useState (true);
+
         const comprar = (dato) =>{
                 const pedido={
                     cliente:dato,
@@ -28,13 +32,20 @@ const Checkout = () => {
                     vaciarCarrito();
                 })
 
+                setTimeout(() => {
+                    setLoading(false)
+                }, 3000);
             };
             
             if(pedidoId){
                 return(
+                    loading
+                    ?
+                    <Loader />
+                    :
                     <div className="container">
-                        <h1 className="main-title">Muchas Gracias por tu pedido</h1>
-                        <p>tu numero de pedido es: {pedidoId}</p>
+                        <h1 className="pedido">Muchas Gracias por tu pedido: </h1>
+                        <p>tu numero de pedido es: <b>{pedidoId}</b></p>
                     </div>
                 )
             };

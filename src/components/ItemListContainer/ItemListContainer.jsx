@@ -4,6 +4,7 @@ import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase/config';
+import Loader from '../Loader/Loader';
 
 const ItemListContainer = () => {
 
@@ -11,6 +12,7 @@ const ItemListContainer = () => {
     const categoria = useParams().categoria;
     const[ titulo] = useState("Productos");
     
+    const [loading, setLoading] = useState (true);
     
     useEffect(() => {
 
@@ -27,10 +29,18 @@ const ItemListContainer = () => {
 
                 )
             })
+        
+            setTimeout(() => {
+                setLoading(false)
+            }, 2500);
 
         }, [categoria])
 
         return (    
+                loading 
+                ?
+                <Loader/>
+                :
             <div>
             <ItemList productos ={productos} titulo = {titulo}/>
             </div>

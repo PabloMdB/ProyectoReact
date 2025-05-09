@@ -1,6 +1,6 @@
 import './ItemList.css'
 import Item from "../Item/Item";
-import React from "react";
+
 
 const ItemList = ({productos, titulo}) =>{
     
