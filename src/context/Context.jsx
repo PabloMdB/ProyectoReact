@@ -48,7 +48,7 @@ export const ContextProvider = ({ children }) => {
 
     const vaciarCarrito = () => {
     setCarrito([]);
-    toast("Producto vaciado");
+    
     };
 
     return (
