@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const Context = createContext();
@@ -32,6 +33,9 @@ export const ContextProvider = ({ children }) => {
                 nuevoCarrito.push(itemAgregado);
                     setCarrito(nuevoCarrito); // Corrección: Actualizar el estado con el nuevo carrito
         }
+
+        toast("Productos agregado");
+
         };
 
     const cantidadEnCarrito = () => {
@@ -44,6 +48,7 @@ export const ContextProvider = ({ children }) => {
 
     const vaciarCarrito = () => {
     setCarrito([]);
+    toast("Producto vaciado");
     };
 
     return (

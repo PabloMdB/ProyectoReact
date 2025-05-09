@@ -6,20 +6,24 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../../firebase/config';
 import Loader from '../Loader/Loader';
 
+
 const ItemListContainer = () => {
 
     const [productos, setProductos] = useState([]);
     const categoria = useParams().categoria;
-    const[ titulo] = useState("Productos");
+    
     
     const [loading, setLoading] = useState (true);
     
     useEffect(() => {
 
+        
         const productosRef = collection(db, "productos");
-
+        
         const q = categoria ? query(productosRef, where("categoria", "==" , categoria)) : productosRef;
-
+        
+        console.log("estas son mis variables de entorno", import.meta.env);
+        
         getDocs(q)
             .then((resp) =>{
                 setProductos(
@@ -29,7 +33,7 @@ const ItemListContainer = () => {
 
                 )
             })
-        
+            
             setTimeout(() => {
                 setLoading(false)
             }, 2500);
@@ -42,7 +46,7 @@ const ItemListContainer = () => {
                 <Loader/>
                 :
             <div>
-            <ItemList productos ={productos} titulo = {titulo}/>
+            <ItemList productos ={productos}/>
             </div>
         )
 };

@@ -12,7 +12,6 @@ const Contacto = () => {
 
     return (
             <div className="container">
-                <h1 className="main-title">Contacto</h1>
                 <form className='formulario' onSubmit={handleSubmit(enviar)}>
                     <input type="text" placeholder='Ingresa tu Nombre' {...register("nombre")} />
                     <input type="email" placeholder='Ingresa tu Email' {...register("email")} />

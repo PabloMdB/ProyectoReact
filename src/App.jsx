@@ -8,12 +8,14 @@ import { BrowserRouter, Route, Routes, UNSAFE_RouteContext } from 'react-router-
 import {ContextProvider } from './context/Context';
 import Carrito from './components/Carrito/Carrito';
 import Checkout from './components/Checkout/Checkout';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
   return (
     <div>
         <ContextProvider>
+          <ToastContainer/>
           <BrowserRouter>
           
             <Navbar/>
